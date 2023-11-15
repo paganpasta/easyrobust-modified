@@ -1,1 +1,1 @@
-from .autoattack import evaluate_imagenet_autoattack
+from .autoattack import evaluate_imagenet_autoattack, evaluate_imagenet_torchattacks

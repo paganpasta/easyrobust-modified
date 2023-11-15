@@ -1,4 +1,4 @@
-from .adversarial import evaluate_imagenet_autoattack
+from .adversarial import evaluate_imagenet_autoattack, evaluate_imagenet_torchattacks
 from .ood import evaluate_imagenet_a
 from .ood import evaluate_imagenet_c
 from .ood import evaluate_imagenet_r

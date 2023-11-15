@@ -1,0 +1,108 @@
+name:_vit_base_patch16_224_ImageNet_250_0.22.log
+batch_size:64
+dataset:ImageNet
+data_dir:/data/imagenet/Data/CLS-LOC/
+log_dir:log
+crop_size:224
+img_size:224
+workers:16
+ckpt_path:../weights/ViT_B_patch16_DAT+NS.pth
+network:vit_base_patch16_224
+dataset_size:1.0
+patch_select:Attn
+num_patch:1
+sparse_pixel_num:0
+attack_mode:Attention
+atten_loss_weight:0.002
+atten_select:4
+mild_l_2:0.0
+mild_l_inf:0.0
+train_attack_iters:250
+random_sparse_pixel:False
+learnable_mask_stop:200
+attack_learning_rate:0.22
+step_size:10
+gamma:0.95
+seed:0
+
+
+Iter: [0/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0811(1.0811) Acc:0.7344(0.7344)
+model:ADV Loss:CE: 6.2877(6.2877) Acc:0.2656(0.2656)
+Total False -> True: 0
+Iter: [1/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0514(1.0662) Acc:0.7656(0.7500)
+model:ADV Loss:CE: 6.3209(6.3043) Acc:0.2031(0.2344)
+Total False -> True: 0
+Iter: [2/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5758(0.9028) Acc:0.8750(0.7917)
+model:ADV Loss:CE: 5.2635(5.9574) Acc:0.2969(0.2552)
+Total False -> True: 0
+Iter: [3/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0987(0.9517) Acc:0.7500(0.7812)
+model:ADV Loss:CE: 6.4553(6.0818) Acc:0.2188(0.2461)
+Total False -> True: 0
+Iter: [4/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.2255(1.0065) Acc:0.7344(0.7719)
+model:ADV Loss:CE: 6.1499(6.0954) Acc:0.2969(0.2562)
+Total False -> True: 0
+Iter: [5/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.6029(0.9392) Acc:0.8594(0.7865)
+model:ADV Loss:CE: 5.4939(5.9952) Acc:0.2812(0.2604)
+Total False -> True: 0
+Iter: [6/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.3155(0.9930) Acc:0.7188(0.7768)
+model:ADV Loss:CE: 5.9398(5.9873) Acc:0.1875(0.2500)
+Total False -> True: 0
+Iter: [7/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8164(0.9709) Acc:0.7969(0.7793)
+model:ADV Loss:CE: 5.5890(5.9375) Acc:0.1562(0.2383)
+Total False -> True: 0
+Iter: [8/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0769(0.9827) Acc:0.7188(0.7726)
+model:ADV Loss:CE: 5.8526(5.9281) Acc:0.2500(0.2396)
+Total False -> True: 0
+Iter: [9/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8583(0.9702) Acc:0.8438(0.7797)
+model:ADV Loss:CE: 5.8945(5.9247) Acc:0.2656(0.2422)
+Total False -> True: 0
+Iter: [10/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0093(0.9738) Acc:0.7969(0.7812)
+model:ADV Loss:CE: 5.7570(5.9095) Acc:0.3125(0.2486)
+Total False -> True: 0
+Iter: [11/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9115(0.9686) Acc:0.7969(0.7826)
+model:ADV Loss:CE: 5.9109(5.9096) Acc:0.2031(0.2448)
+Total False -> True: 0
+Iter: [12/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9626(0.9681) Acc:0.8125(0.7849)
+model:ADV Loss:CE: 5.6583(5.8903) Acc:0.2344(0.2440)
+Total False -> True: 0
+Iter: [13/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.1376(0.9802) Acc:0.7344(0.7812)
+model:ADV Loss:CE: 5.7741(5.8820) Acc:0.2656(0.2455)
+Total False -> True: 0
+Iter: [14/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0583(0.9855) Acc:0.7969(0.7823)
+model:ADV Loss:CE: 6.2953(5.9095) Acc:0.0938(0.2354)
+Total False -> True: 0
+Iter: [15/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7754(0.9723) Acc:0.7969(0.7832)
+model:ADV Loss:CE: 5.7052(5.8967) Acc:0.2656(0.2373)
+Total False -> True: 0
+Iter: [16/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8754(0.9666) Acc:0.7500(0.7812)
+model:ADV Loss:CE: 5.5163(5.8744) Acc:0.2344(0.2371)
+Total False -> True: 0
+Iter: [17/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8507(0.9602) Acc:0.7656(0.7804)
+model:ADV Loss:CE: 6.3217(5.8992) Acc:0.2656(0.2387)
+Total False -> True: 0
+Iter: [18/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9826(0.9614) Acc:0.7812(0.7804)
+model:ADV Loss:CE: 5.6809(5.8877) Acc:0.2188(0.2377)
+Total False -> True: 0
+Iter: [19/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8712(0.9569) Acc:0.8594(0.7844)
+model:ADV Loss:CE: 5.7432(5.8805) Acc:0.2188(0.2367)
+Total False -> True: 0

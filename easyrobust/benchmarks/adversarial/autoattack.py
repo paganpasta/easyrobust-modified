@@ -4,9 +4,14 @@ from PIL import Image
 from tqdm import tqdm
 
 import torch
-from torchvision import transforms
+from torchvision import transforms, datasets
 from timm.utils import AverageMeter, accuracy
-from easyrobust.attacks import AutoAttack
+#from easyrobust.attacks import AutoAttack
+from torchattacks.attacks.deepfool import DeepFool 
+from torchattacks.attacks.onepixel import OnePixel
+from torchattacks.attacks.autoattack import AutoAttack
+from torchattacks.attacks.cw import CW
+import copy
 
 class AutoAttackImageNetDataset(torch.utils.data.Dataset):
 
@@ -75,5 +80,53 @@ def evaluate_imagenet_autoattack(model, data_dir, test_batchsize=128, test_trans
         top1_m.update(acc1.item(), labels_adv.size(0))
 
     print(f"Top1 Accuracy on the AutoAttack: {top1_m.avg:.1f}%")
+
+
+def evaluate_imagenet_torchattacks(model, data_dir, test_batchsize=128, test_transform=None):
+    if not os.path.exists(data_dir):
+        print('{} is not exist. skip')
+        return
+
+    device = next(model.parameters()).device
+    #attack_fns = [('Deepfool',DeepFool), ('1pixel',OnePixel), ('autoattack',AutoAttack), ('cw',CW)]
+    attack_fns = [('autoattack',AutoAttack), ('cw',CW)]
+
+    if test_transform is None:
+        in_transform = transforms.Compose([transforms.Resize(256),
+                                            transforms.CenterCrop(224),
+                                            transforms.ToTensor(),
+                                            transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))])
+    else:
+        in_transform = test_transform
+
+    print(test_transform)
+    dataset_in = AutoAttackImageNetDataset(data_dir, transform=in_transform)
+    #dataset_in = datasets.ImageFolder(data_dir, transform=in_transform)
+    in_data_loader = torch.utils.data.DataLoader(
+                    dataset_in, sampler=None,
+                    batch_size=test_batchsize,
+                    num_workers=4,
+                    pin_memory=True,
+                    drop_last=False
+                )
+            
+    model.eval()
+
+    for name, attack in attack_fns:
+        top1_m = AverageMeter()
+        m = copy.deepcopy(model)
+        if name == 'autoattack':
+            attack = attack(m, n_classes=1000, eps=1.0/8.0)
+        else:
+            attack = attack(m, c=0.5)
+        for input, target in tqdm(in_data_loader):
+            input = input.to(device)
+            target = target.to(device)
+            adv_images = attack(input, target)
+            with torch.no_grad():
+                labels_adv = model(adv_images)
+            acc1, _ = accuracy(labels_adv, target, topk=(1, 5))
+            top1_m.update(acc1.item(), labels_adv.size(0))
+        print('Adversarial accuracy on', name, top1_m.avg)
 
 

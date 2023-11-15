@@ -15,7 +15,7 @@ parser.add_argument('--model', '-m', metavar='MODEL', default='resnet50',
                     help='model architecture (default: resnet50)')
 parser.add_argument('--data_dir', default='benchmarks/data', 
                     help='benchmark datasets')
-parser.add_argument('--ckpt_path', default='', type=str, required=True,
+parser.add_argument('--ckpt_path', default='', type=str, required=False,
                     help='model architecture (default: dpn92)')
 parser.add_argument('-j', '--workers', default=4, type=int, metavar='N',
                     help='number of data loading workers (default: 4)')
@@ -72,32 +72,36 @@ def main():
     print(f"Creating model: {args.model}")
     model = create_model(
         args.model,
-        pretrained=False,
+        pretrained=True,
         num_classes=args.num_classes
     )
     normalize = NormalizeByChannelMeanStd(
             mean=args.mean, std=args.std)
-
-    if args.ckpt_path.startswith('http'):
-        ckpt = model_zoo.load_url(args.ckpt_path)
+    if args.ckpt_path:
+        if args.ckpt_path.startswith('http'):
+            ckpt = model_zoo.load_url(args.ckpt_path)
+        else:
+            ckpt = torch.load(args.ckpt_path)
     else:
-        ckpt = torch.load(args.ckpt_path)
-
-    if args.use_ema:
-        assert 'state_dict_ema' in ckpt.keys() and ckpt['state_dict_ema'] is not None, 'no ema state_dict found!'
-        state_dict = ckpt['state_dict_ema']
-    else:
-        if 'state_dict' in ckpt.keys():
+        print('No checkpoint provided. Using pretrained Timm weights!')
+    
+    if args.ckpt_path:
+        if args.use_ema:
+            assert 'state_dict_ema' in ckpt.keys() and ckpt['state_dict_ema'] is not None, 'no ema state_dict found!'
+            state_dict = ckpt['state_dict_ema']
+        elif 'state_dict' in ckpt.keys():
             state_dict = ckpt['state_dict']
+        elif 'model_state_dict' in ckpt.keys():
+            state_dict = ckpt['model_state_dict']
         else:
             state_dict = ckpt
-
-    if '0.mean' in state_dict.keys() and '0.std' in state_dict.keys():
-        model = nn.Sequential(normalize, model)
-        model.load_state_dict(state_dict)
-    else:
-        model.load_state_dict(ckpt)
-        model = nn.Sequential(normalize, model)
+   
+        if '0.mean' in state_dict.keys() and '0.std' in state_dict.keys():
+            model = nn.Sequential(normalize, model)
+            model.load_state_dict(state_dict)
+        else:
+            model.load_state_dict(ckpt)
+            model = nn.Sequential(normalize, model)
     
     model.eval()
     if args.num_gpu > 1:
@@ -117,13 +121,14 @@ def main():
     #############################################################
     #         Evaluate on Benchmarks
     #############################################################
+    #evaluate_imagenet_val(model, os.path.join(args.data_dir, 'val'), test_batchsize=args.batch_size, test_transform=test_transform)
     
     if args.adv:
         # Adversarial Robust Models Benchmark
-        evaluate_imagenet_autoattack(model, os.path.join(args.data_dir, 'imagenet-val'), test_batchsize=args.batch_size, test_transform=test_transform)
+        #evaluate_imagenet_autoattack(model, os.path.join(args.data_dir, 'val'), test_batchsize=args.batch_size, test_transform=test_transform)
+        evaluate_imagenet_torchattacks(model, os.path.join(args.data_dir, 'val'), test_batchsize=args.batch_size, test_transform=test_transform)
     else:
         # Non-Adversarial Robust Models Benchmark
-        evaluate_imagenet_val(model, os.path.join(args.data_dir, 'imagenet-val'), test_batchsize=args.batch_size, test_transform=test_transform)
         evaluate_imagenet_a(model, os.path.join(args.data_dir, 'imagenet-a'), test_batchsize=args.batch_size, test_transform=test_transform)
         evaluate_imagenet_r(model, os.path.join(args.data_dir, 'imagenet-r'), test_batchsize=args.batch_size, test_transform=test_transform)
         evaluate_imagenet_sketch(model, os.path.join(args.data_dir, 'imagenet-sketch'), test_batchsize=args.batch_size, test_transform=test_transform)
