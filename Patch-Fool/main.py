@@ -12,7 +12,7 @@ from models.resnet import ResNet50, ResNet152, ResNet101
 from models.vision_transformer import vit_base_patch16_224
 from utils import clamp, get_loaders, my_logger, my_meter, PCGrad
 from collections import OrderedDict
-
+from timm import create_model
 
 def get_aug():
     parser = argparse.ArgumentParser(description='Patch-Fool Training')
@@ -116,13 +116,17 @@ def main():
         model = deit_base_patch16_224(pretrained=True)
     elif 'vit' in args.network:
         model = vit_base_patch16_224()
+        m = create_model(args.network, pretrained=True)
+        state_dict = m.state_dict()
+        model.load_state_dict(state_dict)
+
     else:
         print('Wrong Network')
         raise
     print(model)
     if args.ckpt_path:
         ckpt = torch.load(args.ckpt_path)
-        state_dict = ckpt['model_state_dict']
+        state_dict = ckpt['model_state_dict'] if 'model_state_dict' in ckpt.keys() else ckpt['state_dict']
         new_dict = OrderedDict()
         for k, v in state_dict.items():
             if k[0] == '1':

@@ -11,6 +11,7 @@ from torchattacks.attacks.deepfool import DeepFool
 from torchattacks.attacks.onepixel import OnePixel
 from torchattacks.attacks.autoattack import AutoAttack
 from torchattacks.attacks.cw import CW
+from torchattacks.attacks.tpgd import TPGD
 import copy
 
 class AutoAttackImageNetDataset(torch.utils.data.Dataset):
@@ -89,7 +90,7 @@ def evaluate_imagenet_torchattacks(model, data_dir, test_batchsize=128, test_tra
 
     device = next(model.parameters()).device
     #attack_fns = [('Deepfool',DeepFool), ('1pixel',OnePixel), ('autoattack',AutoAttack), ('cw',CW)]
-    attack_fns = [('autoattack',AutoAttack), ('cw',CW)]
+    attack_fns = [('autoattack', AutoAttack)]
 
     if test_transform is None:
         in_transform = transforms.Compose([transforms.Resize(256),
@@ -116,9 +117,11 @@ def evaluate_imagenet_torchattacks(model, data_dir, test_batchsize=128, test_tra
         top1_m = AverageMeter()
         m = copy.deepcopy(model)
         if name == 'autoattack':
-            attack = attack(m, n_classes=1000, eps=1.0/8.0)
-        else:
-            attack = attack(m, c=0.5)
+            attack = attack(m, n_classes=1000, eps=1/255)
+        elif name == 'CW':
+            attack = attack(m, c=1/2)
+        elif name == 'TPGD':
+            attack = attack(m, eps=1/255)
         for input, target in tqdm(in_data_loader):
             input = input.to(device)
             target = target.to(device)

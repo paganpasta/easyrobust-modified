@@ -6,3 +6,5 @@ timm==0.5.4
 einops
 ftfy
 regex
+torchattacks
+pyWavelets

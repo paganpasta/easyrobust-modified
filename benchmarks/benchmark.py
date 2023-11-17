@@ -8,7 +8,7 @@ import torchvision.transforms as transforms
 
 from timm.models import create_model
 from easyrobust.benchmarks import *
-from easyrobust.models import *
+#from easyrobust.models import *
 
 parser = argparse.ArgumentParser(description='PyTorch ImageNet Inference')
 parser.add_argument('--model', '-m', metavar='MODEL', default='resnet50',

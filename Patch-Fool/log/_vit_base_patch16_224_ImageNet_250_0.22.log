@@ -6,7 +6,7 @@ log_dir:log
 crop_size:224
 img_size:224
 workers:16
-ckpt_path:../weights/ViT_B_patch16_DAT+NS.pth
+ckpt_path:None
 network:vit_base_patch16_224
 dataset_size:1.0
 patch_select:Attn
@@ -27,82 +27,322 @@ seed:0
 
 
 Iter: [0/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.0811(1.0811) Acc:0.7344(0.7344)
-model:ADV Loss:CE: 6.2877(6.2877) Acc:0.2656(0.2656)
+model:Base Loss:CE: 1.0516(1.0516) Acc:0.7812(0.7812)
+model:ADV Loss:CE: 4.9879(4.9879) Acc:0.1719(0.1719)
 Total False -> True: 0
 Iter: [1/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.0514(1.0662) Acc:0.7656(0.7500)
-model:ADV Loss:CE: 6.3209(6.3043) Acc:0.2031(0.2344)
+model:Base Loss:CE: 0.8334(0.9425) Acc:0.8281(0.8047)
+model:ADV Loss:CE: 5.3710(5.1794) Acc:0.1250(0.1484)
 Total False -> True: 0
 Iter: [2/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.5758(0.9028) Acc:0.8750(0.7917)
-model:ADV Loss:CE: 5.2635(5.9574) Acc:0.2969(0.2552)
+model:Base Loss:CE: 0.7569(0.8806) Acc:0.8438(0.8177)
+model:ADV Loss:CE: 5.7423(5.3670) Acc:0.2031(0.1667)
 Total False -> True: 0
 Iter: [3/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.0987(0.9517) Acc:0.7500(0.7812)
-model:ADV Loss:CE: 6.4553(6.0818) Acc:0.2188(0.2461)
+model:Base Loss:CE: 0.8146(0.8641) Acc:0.8438(0.8242)
+model:ADV Loss:CE: 5.3006(5.3504) Acc:0.1562(0.1641)
 Total False -> True: 0
 Iter: [4/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.2255(1.0065) Acc:0.7344(0.7719)
-model:ADV Loss:CE: 6.1499(6.0954) Acc:0.2969(0.2562)
+model:Base Loss:CE: 1.1207(0.9155) Acc:0.7656(0.8125)
+model:ADV Loss:CE: 5.9961(5.4796) Acc:0.1250(0.1562)
 Total False -> True: 0
 Iter: [5/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.6029(0.9392) Acc:0.8594(0.7865)
-model:ADV Loss:CE: 5.4939(5.9952) Acc:0.2812(0.2604)
+model:Base Loss:CE: 0.6686(0.8743) Acc:0.8125(0.8125)
+model:ADV Loss:CE: 4.7086(5.3511) Acc:0.1562(0.1562)
 Total False -> True: 0
 Iter: [6/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.3155(0.9930) Acc:0.7188(0.7768)
-model:ADV Loss:CE: 5.9398(5.9873) Acc:0.1875(0.2500)
+model:Base Loss:CE: 0.8370(0.8690) Acc:0.7656(0.8058)
+model:ADV Loss:CE: 5.0398(5.3066) Acc:0.2031(0.1629)
 Total False -> True: 0
 Iter: [7/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.8164(0.9709) Acc:0.7969(0.7793)
-model:ADV Loss:CE: 5.5890(5.9375) Acc:0.1562(0.2383)
+model:Base Loss:CE: 0.7614(0.8555) Acc:0.8438(0.8105)
+model:ADV Loss:CE: 4.8787(5.2531) Acc:0.1719(0.1641)
 Total False -> True: 0
 Iter: [8/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.0769(0.9827) Acc:0.7188(0.7726)
-model:ADV Loss:CE: 5.8526(5.9281) Acc:0.2500(0.2396)
+model:Base Loss:CE: 0.5464(0.8212) Acc:0.9062(0.8212)
+model:ADV Loss:CE: 5.0708(5.2329) Acc:0.1875(0.1667)
 Total False -> True: 0
 Iter: [9/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.8583(0.9702) Acc:0.8438(0.7797)
-model:ADV Loss:CE: 5.8945(5.9247) Acc:0.2656(0.2422)
+model:Base Loss:CE: 1.0879(0.8479) Acc:0.7344(0.8125)
+model:ADV Loss:CE: 5.5639(5.2660) Acc:0.1250(0.1625)
 Total False -> True: 0
 Iter: [10/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.0093(0.9738) Acc:0.7969(0.7812)
-model:ADV Loss:CE: 5.7570(5.9095) Acc:0.3125(0.2486)
+model:Base Loss:CE: 0.9034(0.8529) Acc:0.7969(0.8111)
+model:ADV Loss:CE: 4.9694(5.2390) Acc:0.1719(0.1634)
 Total False -> True: 0
 Iter: [11/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.9115(0.9686) Acc:0.7969(0.7826)
-model:ADV Loss:CE: 5.9109(5.9096) Acc:0.2031(0.2448)
+model:Base Loss:CE: 0.7322(0.8428) Acc:0.8281(0.8125)
+model:ADV Loss:CE: 5.5805(5.2675) Acc:0.1406(0.1615)
 Total False -> True: 0
 Iter: [12/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.9626(0.9681) Acc:0.8125(0.7849)
-model:ADV Loss:CE: 5.6583(5.8903) Acc:0.2344(0.2440)
+model:Base Loss:CE: 0.4704(0.8142) Acc:0.8906(0.8185)
+model:ADV Loss:CE: 4.6139(5.2172) Acc:0.1250(0.1587)
 Total False -> True: 0
 Iter: [13/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.1376(0.9802) Acc:0.7344(0.7812)
-model:ADV Loss:CE: 5.7741(5.8820) Acc:0.2656(0.2455)
+model:Base Loss:CE: 1.1960(0.8415) Acc:0.7188(0.8114)
+model:ADV Loss:CE: 5.7224(5.2533) Acc:0.1094(0.1551)
 Total False -> True: 0
 Iter: [14/79] Loss and Acc for all models:
-model:Base Loss:CE: 1.0583(0.9855) Acc:0.7969(0.7823)
-model:ADV Loss:CE: 6.2953(5.9095) Acc:0.0938(0.2354)
+model:Base Loss:CE: 1.0996(0.8587) Acc:0.7188(0.8052)
+model:ADV Loss:CE: 5.6945(5.2827) Acc:0.1719(0.1562)
 Total False -> True: 0
 Iter: [15/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.7754(0.9723) Acc:0.7969(0.7832)
-model:ADV Loss:CE: 5.7052(5.8967) Acc:0.2656(0.2373)
+model:Base Loss:CE: 0.8291(0.8568) Acc:0.8281(0.8066)
+model:ADV Loss:CE: 5.4786(5.2949) Acc:0.1250(0.1543)
 Total False -> True: 0
 Iter: [16/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.8754(0.9666) Acc:0.7500(0.7812)
-model:ADV Loss:CE: 5.5163(5.8744) Acc:0.2344(0.2371)
+model:Base Loss:CE: 0.7145(0.8485) Acc:0.7969(0.8061)
+model:ADV Loss:CE: 4.7024(5.2601) Acc:0.1719(0.1553)
 Total False -> True: 0
 Iter: [17/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.8507(0.9602) Acc:0.7656(0.7804)
-model:ADV Loss:CE: 6.3217(5.8992) Acc:0.2656(0.2387)
+model:Base Loss:CE: 0.8414(0.8481) Acc:0.8125(0.8064)
+model:ADV Loss:CE: 4.5862(5.2226) Acc:0.2344(0.1597)
 Total False -> True: 0
 Iter: [18/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.9826(0.9614) Acc:0.7812(0.7804)
-model:ADV Loss:CE: 5.6809(5.8877) Acc:0.2188(0.2377)
+model:Base Loss:CE: 0.7780(0.8444) Acc:0.7812(0.8051)
+model:ADV Loss:CE: 5.4321(5.2337) Acc:0.1406(0.1587)
 Total False -> True: 0
 Iter: [19/79] Loss and Acc for all models:
-model:Base Loss:CE: 0.8712(0.9569) Acc:0.8594(0.7844)
-model:ADV Loss:CE: 5.7432(5.8805) Acc:0.2188(0.2367)
+model:Base Loss:CE: 0.7930(0.8418) Acc:0.8438(0.8070)
+model:ADV Loss:CE: 5.5259(5.2483) Acc:0.1875(0.1602)
 Total False -> True: 0
+Iter: [20/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.6997(0.8350) Acc:0.8125(0.8073)
+model:ADV Loss:CE: 5.2834(5.2500) Acc:0.1094(0.1577)
+Total False -> True: 0
+Iter: [21/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.6262(0.8255) Acc:0.8438(0.8089)
+model:ADV Loss:CE: 5.0258(5.2398) Acc:0.1094(0.1555)
+Total False -> True: 0
+Iter: [22/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7269(0.8213) Acc:0.8125(0.8091)
+model:ADV Loss:CE: 5.2991(5.2423) Acc:0.1250(0.1542)
+Total False -> True: 0
+Iter: [23/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.4708(0.8067) Acc:0.8906(0.8125)
+model:ADV Loss:CE: 4.7060(5.2200) Acc:0.1875(0.1556)
+Total False -> True: 0
+Iter: [24/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8849(0.8098) Acc:0.7500(0.8100)
+model:ADV Loss:CE: 5.1232(5.2161) Acc:0.2031(0.1575)
+Total False -> True: 0
+Iter: [25/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8230(0.8103) Acc:0.7500(0.8077)
+model:ADV Loss:CE: 5.1082(5.2120) Acc:0.1719(0.1581)
+Total False -> True: 0
+Iter: [26/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.2709(0.8273) Acc:0.6875(0.8032)
+model:ADV Loss:CE: 6.1510(5.2468) Acc:0.1406(0.1574)
+Total False -> True: 0
+Iter: [27/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9572(0.8320) Acc:0.8125(0.8036)
+model:ADV Loss:CE: 5.8855(5.2696) Acc:0.1250(0.1562)
+Total False -> True: 0
+Iter: [28/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0514(0.8396) Acc:0.7656(0.8023)
+model:ADV Loss:CE: 5.7703(5.2868) Acc:0.1094(0.1546)
+Total False -> True: 0
+Iter: [29/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5635(0.8303) Acc:0.8438(0.8036)
+model:ADV Loss:CE: 4.7134(5.2677) Acc:0.1719(0.1552)
+Total False -> True: 0
+Iter: [30/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0271(0.8367) Acc:0.7188(0.8009)
+model:ADV Loss:CE: 5.6255(5.2793) Acc:0.1094(0.1537)
+Total False -> True: 0
+Iter: [31/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8530(0.8372) Acc:0.7969(0.8008)
+model:ADV Loss:CE: 5.2180(5.2773) Acc:0.1250(0.1528)
+Total False -> True: 0
+Iter: [32/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5913(0.8298) Acc:0.8594(0.8026)
+model:ADV Loss:CE: 5.1395(5.2732) Acc:0.1562(0.1529)
+Total False -> True: 0
+Iter: [33/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8342(0.8299) Acc:0.7969(0.8024)
+model:ADV Loss:CE: 5.1549(5.2697) Acc:0.2188(0.1549)
+Total False -> True: 0
+Iter: [34/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0162(0.8352) Acc:0.7344(0.8004)
+model:ADV Loss:CE: 5.6095(5.2794) Acc:0.1406(0.1545)
+Total False -> True: 0
+Iter: [35/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5996(0.8287) Acc:0.8594(0.8021)
+model:ADV Loss:CE: 4.1846(5.2490) Acc:0.1719(0.1549)
+Total False -> True: 0
+Iter: [36/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9625(0.8323) Acc:0.8281(0.8028)
+model:ADV Loss:CE: 5.5173(5.2562) Acc:0.2031(0.1562)
+Total False -> True: 0
+Iter: [37/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8950(0.8339) Acc:0.7812(0.8022)
+model:ADV Loss:CE: 5.1145(5.2525) Acc:0.1250(0.1554)
+Total False -> True: 0
+Iter: [38/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7983(0.8330) Acc:0.7969(0.8021)
+model:ADV Loss:CE: 5.7710(5.2658) Acc:0.1406(0.1550)
+Total False -> True: 0
+Iter: [39/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7673(0.8314) Acc:0.7656(0.8012)
+model:ADV Loss:CE: 5.3188(5.2671) Acc:0.1875(0.1559)
+Total False -> True: 0
+Iter: [40/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8171(0.8310) Acc:0.8281(0.8018)
+model:ADV Loss:CE: 5.4545(5.2717) Acc:0.1406(0.1555)
+Total False -> True: 0
+Iter: [41/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5552(0.8245) Acc:0.8750(0.8036)
+model:ADV Loss:CE: 5.2011(5.2700) Acc:0.1094(0.1544)
+Total False -> True: 0
+Iter: [42/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.4558(0.8159) Acc:0.8750(0.8052)
+model:ADV Loss:CE: 5.2706(5.2700) Acc:0.1250(0.1537)
+Total False -> True: 0
+Iter: [43/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8558(0.8168) Acc:0.8125(0.8054)
+model:ADV Loss:CE: 5.6117(5.2778) Acc:0.1562(0.1538)
+Total False -> True: 0
+Iter: [44/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7536(0.8154) Acc:0.8281(0.8059)
+model:ADV Loss:CE: 5.0842(5.2735) Acc:0.1562(0.1538)
+Total False -> True: 0
+Iter: [45/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9716(0.8188) Acc:0.7656(0.8050)
+model:ADV Loss:CE: 4.7178(5.2614) Acc:0.2500(0.1559)
+Total False -> True: 0
+Iter: [46/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5449(0.8130) Acc:0.8906(0.8068)
+model:ADV Loss:CE: 5.0392(5.2567) Acc:0.1406(0.1556)
+Total False -> True: 0
+Iter: [47/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8713(0.8142) Acc:0.7656(0.8060)
+model:ADV Loss:CE: 5.5943(5.2637) Acc:0.1875(0.1562)
+Total False -> True: 0
+Iter: [48/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9651(0.8172) Acc:0.7812(0.8055)
+model:ADV Loss:CE: 6.2108(5.2830) Acc:0.1406(0.1559)
+Total False -> True: 0
+Iter: [49/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5235(0.8114) Acc:0.8906(0.8072)
+model:ADV Loss:CE: 4.7900(5.2732) Acc:0.1875(0.1566)
+Total False -> True: 0
+Iter: [50/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7367(0.8099) Acc:0.8438(0.8079)
+model:ADV Loss:CE: 5.2162(5.2721) Acc:0.1406(0.1562)
+Total False -> True: 0
+Iter: [51/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7586(0.8089) Acc:0.8438(0.8086)
+model:ADV Loss:CE: 5.4976(5.2764) Acc:0.1250(0.1556)
+Total False -> True: 0
+Iter: [52/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9434(0.8115) Acc:0.7344(0.8072)
+model:ADV Loss:CE: 5.3315(5.2774) Acc:0.0938(0.1545)
+Total False -> True: 0
+Iter: [53/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7699(0.8107) Acc:0.8125(0.8073)
+model:ADV Loss:CE: 5.1858(5.2757) Acc:0.1406(0.1542)
+Total False -> True: 0
+Iter: [54/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7147(0.8089) Acc:0.8438(0.8080)
+model:ADV Loss:CE: 4.8696(5.2684) Acc:0.1875(0.1548)
+Total False -> True: 0
+Iter: [55/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.1503(0.8150) Acc:0.7812(0.8075)
+model:ADV Loss:CE: 5.1671(5.2666) Acc:0.2031(0.1557)
+Total False -> True: 0
+Iter: [56/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7424(0.8138) Acc:0.7812(0.8070)
+model:ADV Loss:CE: 5.2727(5.2667) Acc:0.1719(0.1560)
+Total False -> True: 0
+Iter: [57/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9814(0.8167) Acc:0.7344(0.8058)
+model:ADV Loss:CE: 5.0176(5.2624) Acc:0.1562(0.1560)
+Total False -> True: 0
+Iter: [58/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9396(0.8187) Acc:0.7188(0.8043)
+model:ADV Loss:CE: 5.6133(5.2683) Acc:0.2031(0.1568)
+Total False -> True: 0
+Iter: [59/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8583(0.8194) Acc:0.7969(0.8042)
+model:ADV Loss:CE: 6.0421(5.2812) Acc:0.1094(0.1560)
+Total False -> True: 0
+Iter: [60/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0132(0.8226) Acc:0.7656(0.8035)
+model:ADV Loss:CE: 5.9001(5.2914) Acc:0.1094(0.1552)
+Total False -> True: 0
+Iter: [61/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.4551(0.8167) Acc:0.8906(0.8049)
+model:ADV Loss:CE: 4.8477(5.2842) Acc:0.1250(0.1547)
+Total False -> True: 0
+Iter: [62/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8088(0.8165) Acc:0.7969(0.8048)
+model:ADV Loss:CE: 4.7315(5.2754) Acc:0.1875(0.1553)
+Total False -> True: 0
+Iter: [63/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7871(0.8161) Acc:0.8906(0.8062)
+model:ADV Loss:CE: 4.8090(5.2681) Acc:0.1719(0.1555)
+Total False -> True: 0
+Iter: [64/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0511(0.8197) Acc:0.7812(0.8058)
+model:ADV Loss:CE: 5.1440(5.2662) Acc:0.1719(0.1558)
+Total False -> True: 0
+Iter: [65/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.2776(0.8266) Acc:0.7500(0.8049)
+model:ADV Loss:CE: 5.7880(5.2741) Acc:0.1406(0.1555)
+Total False -> True: 0
+Iter: [66/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.0233(0.8296) Acc:0.6875(0.8032)
+model:ADV Loss:CE: 5.4336(5.2765) Acc:0.2031(0.1562)
+Total False -> True: 0
+Iter: [67/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.6091(0.8263) Acc:0.8594(0.8040)
+model:ADV Loss:CE: 4.8123(5.2697) Acc:0.2344(0.1574)
+Total False -> True: 0
+Iter: [68/79] Loss and Acc for all models:
+model:Base Loss:CE: 1.3226(0.8335) Acc:0.6719(0.8021)
+model:ADV Loss:CE: 6.1511(5.2825) Acc:0.0625(0.1560)
+Total False -> True: 0
+Iter: [69/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7068(0.8317) Acc:0.8125(0.8022)
+model:ADV Loss:CE: 4.4810(5.2710) Acc:0.2031(0.1567)
+Total False -> True: 0
+Iter: [70/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5756(0.8281) Acc:0.8438(0.8028)
+model:ADV Loss:CE: 4.1864(5.2557) Acc:0.1875(0.1571)
+Total False -> True: 0
+Iter: [71/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5455(0.8242) Acc:0.8750(0.8038)
+model:ADV Loss:CE: 4.7467(5.2487) Acc:0.2031(0.1578)
+Total False -> True: 0
+Iter: [72/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9428(0.8258) Acc:0.7344(0.8029)
+model:ADV Loss:CE: 5.4205(5.2510) Acc:0.1875(0.1582)
+Total False -> True: 0
+Iter: [73/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8382(0.8260) Acc:0.8125(0.8030)
+model:ADV Loss:CE: 5.6856(5.2569) Acc:0.1719(0.1584)
+Total False -> True: 0
+Iter: [74/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.8716(0.8266) Acc:0.8281(0.8033)
+model:ADV Loss:CE: 5.2967(5.2574) Acc:0.1875(0.1588)
+Total False -> True: 0
+Iter: [75/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9378(0.8280) Acc:0.8438(0.8039)
+model:ADV Loss:CE: 4.9057(5.2528) Acc:0.1719(0.1589)
+Total False -> True: 0
+Iter: [76/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.9504(0.8296) Acc:0.8281(0.8042)
+model:ADV Loss:CE: 5.0304(5.2499) Acc:0.1719(0.1591)
+Total False -> True: 0
+Iter: [77/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.7149(0.8281) Acc:0.8750(0.8051)
+model:ADV Loss:CE: 5.3906(5.2517) Acc:0.1719(0.1593)
+Total False -> True: 0
+Iter: [78/79] Loss and Acc for all models:
+model:Base Loss:CE: 0.5426(0.8277) Acc:0.8750(0.8052)
+model:ADV Loss:CE: 4.2905(5.2502) Acc:0.1250(0.1592)
+Total False -> True: 0
+
+Finish! Using time: 5512.005001306534
+model:Base Loss:CE: 0.5426(0.8277) Acc:0.8750(0.8052)
+model:ADV Loss:CE: 4.2905(5.2502) Acc:0.1250(0.1592)
